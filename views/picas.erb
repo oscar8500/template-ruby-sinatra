@@ -4,14 +4,17 @@
   <title>Picas y Fijas 3.0</title>
 </head>
 <body>
-<h1>Picas 3.0</h1>
-<h2>Números aleatorios generados</h2>
-<h2><%= @respuesta %></h2>
-<h2><%= @fijas %></h2>
-<h2><%= @picas %></h2>
+<h1 align="center">Picas 3.0</h1>
+<h2 align="center">Números aleatorios generados</h2>
+<h2 align="center"><%= @respuesta %></h2>
+<h2 align="center"><%= @fijas %></h2>
+<h2 align="center"><%= @picas %></h2>
+<div align="center">
 <form action="/juego" method="post">
-  <input type="text" name="numeroIngresado" id="numeroIngresado">
+  <input type="text" name="numeroIngresado" id="numeroIngresado" maxlength="4">
   <input id="botonJugar" type="submit" value="Jugar!">
 </form>
+</div>
+<h2 align="center">Historial:<%= session["historial"] %></h2>
 </body>
 </html>

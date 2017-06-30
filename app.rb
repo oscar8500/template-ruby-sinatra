@@ -9,6 +9,7 @@ end
 post '/juego' do
   numero = params["numeroIngresado"].to_i
   picas = Picasyfijas.new(numero)
+  session["historial"] = session["historial"].to_s+" "+numero.to_s
   arrespuesta=picas.revisaPicasYFijas
   @respuesta = arrespuesta[0]
   @fijas = arrespuesta[1]
