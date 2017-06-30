@@ -6,9 +6,8 @@
 <body>
 <h1>Picas 3.0</h1>
 <h2>Números aleatorios generados</h2>
-<h2>3 picas y 0 fijas</h2>
-<form>
-  <input type="hidden" value="">
+<h2><%= @respuesta %></h2>
+<form action="/juego" method="post">
   <input type="text" name="numeroIngresado" id="numeroIngresado">
   <input id="botonJugar" type="submit" value="Jugar!">
 </form>
