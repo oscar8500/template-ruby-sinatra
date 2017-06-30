@@ -2,43 +2,34 @@ class Picasyfijas
 
 	def initialize
 
-	@numero = numero[-1,-1,-1,-1]
+	@numero = numero[1,2,3,4]
+
+	@numIngresado = 4021
+	@numPicas = 0
+	@numFijas = 0
+	@numIntentos = 0
 
 	end
 
-	def marcador
-		if @punto_j1 == 3 and @punto_j2 == 3 
-				@estado="deuce"
-		end
-        if (@estado=="deuce")
-	         if @punto_j1==4
-					@estado="adv_j1"
-			else @punto_j2==4
-					@estado="adv_j2"
+	def revisaPicasYFijas
+		numDividido = numIngresado.split("")
+		if @numIntentos >= 4
+			print "Se superaron el número de intentos"
+		else
+			for i in (0..@numero.length)
+				for j in (0..numDividido.length)
+					if i == j and numero[i] == numDividido[j]
+						numFijas+=1 
+						print @numero[i]
+					elsif i != j and numero[i] == numDividido[j]
+						numPicas+=1
+					end
+				end 
 			end
-        else
-
-	        if @punto_j1 == 3 and @punto_j2 == 3 
-				@estado="deuce"
-			elsif @punto_j1 > 3 
-				@estado="win_j1"
-			elsif @punto_j2 > 3 
-				@estado="win_j2"
-			
-			else
-				@estado="#{@puntos[@punto_j1]} - #{@puntos[@punto_j2]}"
+			if @numFijas == 4
+				print "Ganador"
 			end
+			@numIntentos+=1
 		end
-		
-
-		return @estado
-	end
-
-	def marcar_j1
-		@punto_j1 +=1
-	end
-
-	def marcar_j2
-		@punto_j2 +=1
 	end
 end
