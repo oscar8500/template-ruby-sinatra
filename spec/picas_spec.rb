@@ -31,4 +31,9 @@ describe Picasyfijas do
         pyf = Picasyfijas.new "754t"
         expect(pyf.revisaPicasYFijas[0]).to eq "El valor ingresado no es numérico."
     end
+
+    it "Debe validar que las variables ingresadas son sólo números" do
+        pyf = Picasyfijas.new "t"
+        expect(pyf.revisaPicasYFijas[0]).to eq "El valor ingresado no es numérico."
+    end
 end
