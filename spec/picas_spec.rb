@@ -17,5 +17,8 @@ describe Picasyfijas do
         expect(pyf.revisaPicasYFijas[1]).to eq "El número de fijas es 2"
     end
 
-
+    it "Debe validar el número de picas" do
+        pyf = Picasyfijas.new 7541
+        expect(pyf.revisaPicasYFijas[2]).to eq "El número de picas es 2"
+    end
 end

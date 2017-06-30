@@ -18,27 +18,20 @@ class Picasyfijas
 		else
 			@retorno[0] = "El número ingresado no es el correcto"
 		end
-		#numDividido = @numIngresado.split("")
 #		if @numIntentos >= 4
 #			print "Se superaron el número de intentos"
 #		else
 			for i in (0..@numero.length-1)
-				#for j in (0..numDividido.length)
-					puts "@numero[i]: #{@numero[i]} @numIngresado.slice(i): #{@numIngresado.slice(i)}" 
 					if @numero[i] == @numIngresado.slice(i).to_i
-						@numFijas+=1 
-						#print @numero[i]
-					#elsif i != j and numero[i] == numDividido[j]
-					#	numPicas+=1
+						@numFijas+=1
+					elsif @numero.join.to_s.include?@numIngresado.slice(i)
+						@numPicas+=1
 					end
-				#end 
 			end
-#			if @numFijas == 4
-#				print "Ganador"
-#			end
 #			@numIntentos+=1
 #		end
 		@retorno[1] = "El número de fijas es #{@numFijas}"
+		@retorno[2] = "El número de picas es #{@numPicas}"
 		return @retorno
 		#return 
 	end
