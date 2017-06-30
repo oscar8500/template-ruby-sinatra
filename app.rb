@@ -7,7 +7,7 @@ get '/' do
 end
 
 post '/juego' do
-  numero = params["numeroIngresado"].to_i
+  numero = params["numeroIngresado"]
   picas = Picasyfijas.new(numero)
   session["historial"] = session["historial"].to_s+" "+numero.to_s
   arrespuesta=picas.revisaPicasYFijas

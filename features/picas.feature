@@ -44,3 +44,10 @@ Feature: Picas 3.0
     And Hago click en "Jugar!"
     Then Debo leer "Número ingresado no es de 4 dígitos"
 
+  Scenario: Ingresar numeros
+    Given Navego a la pagina
+    And Debo leer "Picas 3.0"
+    And Debo leer "Números aleatorios generados"
+    When Escribo en el campo "numeroIngresado" el valor "kkkk"
+    And Hago click en "Jugar!"
+    Then Debo leer "El valor ingresado no es numérico."
