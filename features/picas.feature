@@ -12,6 +12,7 @@ Feature: Picas 3.0
     When Escribo en el campo "numeroIngresado" el valor "9999"
     And Hago click en "Jugar!"
     Then Debo leer "El número ingresado no es el correcto"
+    And Debo leer "El número de fijas es 0"
 
 
   Scenario: Ingresar numeros
@@ -21,3 +22,4 @@ Feature: Picas 3.0
     When Escribo en el campo "numeroIngresado" el valor "1234"
     And Hago click en "Jugar!"
     Then Debo leer "El número ingresado es el correcto"
+    And Debo leer "El número de fijas es 4"
